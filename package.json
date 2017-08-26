@@ -1,0 +1,35 @@
+{
+  "name": "styled-sass-theme",
+  "version": "1.0.0",
+  "description": "Create styled-components theme from SASS variables",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint lib test",
+    "test": "jest"
+  },
+  "repository": "git@github.com:adamgruber/styled-sass.git",
+  "author": "Adam Gruber <adamgruber@me.com>",
+  "license": "MIT",
+  "dependencies": {
+    "camel-case": "^3.0.0",
+    "node-sass": "^4.5.3",
+    "sass-extract": "^0.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0 || ^4.5.0",
+    "eslint-config-airbnb-base": "^11.3.2",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^20.0.4"
+  },
+  "eslintConfig": {
+    "extends": "airbnb-base",
+    "env": {
+      "browser": true,
+      "node": true,
+      "jest": true
+    },
+    "rules": {
+      "no-use-before-define": ["error", { "functions": false, "classes": true }]
+    }
+  }
+}
