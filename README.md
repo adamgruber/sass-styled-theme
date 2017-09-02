@@ -1,4 +1,4 @@
-styled-sass-theme
+sass-styled-theme
 ---
 
 Extract global variables from Sass stylesheets into a JS object.
@@ -17,12 +17,14 @@ $ yarn add styled-sass-theme
 
 ## Nice! How do I use it?
 
+Wrap your App in a ThemeProvider component like this:
+
 ```jsx
-// Require the lib
-const styledSassTheme = require('styled-sass-theme');
+// Import the lib
+import sassToStyledTheme from 'sass-styled-theme';
 
 // Call the function with absolute path to your Sass file
-const theme = styledSassTheme('./path/to/vars.scss');
+const theme = sassToStyledTheme('./path/to/vars.scss');
 
 // Pass the theme into your ThemeProvider component
 render(
@@ -30,6 +32,17 @@ render(
     <App />
   </ThemeProvider>
 );
+```
+
+Then use themes in your styled components:
+
+```js
+import styled from 'styled-components';
+
+const Button = styled.button`
+  background-color: ${props => props.theme.primary}
+`;
+
 ```
 
 ## Sweet! What does the output look like?
@@ -82,8 +95,13 @@ sassOptions | object | | options to pass thru to [node-sass][]
 
 This project is open source. I've tried to make sure it works for a lot of use cases (read: mine) but if I missed yours, feel free to [open an issue][issues]. Better yet, [submit a PR][pr]! Seriously, any feedback and help is welcome.
 
+### Known Issues
+
+This library uses the awesome [sass-extract][] package under the hood to render and parse the Sass. There is currently an issue where mixins or functions that use default values may cause the variable extraction to silently fail ([sass-extract #12](https://github.com/jgranstrom/sass-extract/issues/12)). If you run into this, a workaround is to make sure that you follow the mixin or function with a normal variable declaration.
+
 [issues]: https://github.com/adamgruber/styled-sass-theme/issues
 [pr]: https://github.com/adamgruber/styled-sass-theme/pulls
 [styled-components]: https://www.styled-components.com/
 [theming]: https://www.styled-components.com/docs/advanced#theming
 [node-sass]: https://github.com/sass/node-sass#options
+[sass-extract]: https://github.com/jgranstrom/sass-extract
