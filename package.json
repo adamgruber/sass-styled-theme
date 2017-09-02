@@ -1,6 +1,6 @@
 {
   "name": "sass-styled-theme",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Create styled-components theme from SASS variables",
   "main": "index.js",
   "scripts": {
