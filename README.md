@@ -10,7 +10,7 @@ I work on a team that uses Sass. We've got a shared variables file that gets ref
 ## Cool! How do I get it?
 
 ```sh
-$ yarn add styled-sass-theme
+$ yarn add sass-styled-theme
 ```
 
 *(npm install works too)*
@@ -78,10 +78,10 @@ It will yield the following object:
 ```
 ## Rad! Can I customize it?
 
-You want options? Sure. The `styledSassTheme` function takes an options object as its second parameter.
+You want options? Sure. The `sassToStyledTheme` function takes an options object as its second parameter.
 
 ```js
-const theme = styledSassTheme(file, { /* options! */ });
+const theme = sassToStyledTheme(file, { /* options! */ });
 ```
 
 ### Options object
@@ -99,8 +99,8 @@ This project is open source. I've tried to make sure it works for a lot of use c
 
 This library uses the awesome [sass-extract][] package under the hood to render and parse the Sass. There is currently an issue where mixins or functions that use default values may cause the variable extraction to silently fail ([sass-extract #12](https://github.com/jgranstrom/sass-extract/issues/12)). If you run into this, a workaround is to make sure that you follow the mixin or function with a normal variable declaration.
 
-[issues]: https://github.com/adamgruber/styled-sass-theme/issues
-[pr]: https://github.com/adamgruber/styled-sass-theme/pulls
+[issues]: https://github.com/adamgruber/sass-styled-theme/issues
+[pr]: https://github.com/adamgruber/sass-styled-theme/pulls
 [styled-components]: https://www.styled-components.com/
 [theming]: https://www.styled-components.com/docs/advanced#theming
 [node-sass]: https://github.com/sass/node-sass#options
