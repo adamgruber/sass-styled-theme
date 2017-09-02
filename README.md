@@ -1,6 +1,8 @@
 sass-styled-theme
 ---
 
+[![npm](https://img.shields.io/npm/v/sass-styled-theme.svg?style=flat-square)](http://www.npmjs.com/package/sass-styled-theme)
+
 Extract global variables from Sass stylesheets into a JS object.
 
 ## Huh? Why?
