@@ -1,1 +1,1 @@
-module.exports = require('./lib/styled-sass-theme');
+module.exports = require('./lib/sass-styled-theme');
