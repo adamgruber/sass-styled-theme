@@ -87,7 +87,7 @@ const theme = sassToStyledTheme(file, { /* options! */ });
 ### Options object
 
 Key | Type | Default | Description
---- | ----- | ------ | -----------
+:-- | :---- | :----- | :----------
 camel | boolean | false | convert output variable names to camelCase
 sassOptions | object | | options to pass thru to [node-sass][]
 
